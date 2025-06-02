@@ -509,11 +509,10 @@
                     feedbackDiv.classList.add('text-yellow-600'); // Indicate uploading state
 
                     // !!! IMPORTANT: Replace '/upload-pdf' with your actual backend server endpoint !!!
-                    const response = await fetch('/upload-pdf', {
-                        method: 'POST',
-                        body: formData,
-                        // 'Content-Type' header is usually set automatically for FormData
-                    });
+                    const response = await const response = await fetch('https://little-dreamers-student-results.onrender.com', {
+    method: 'POST',
+    body: formData,
+});
 
                     if (response.ok) {
                         const result = await response.json();
