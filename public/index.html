@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictation Exercise: Microplastics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Light blue-gray background */
+        }
+        /* Custom styles for input feedback */
+        .input-correct {
+            border-color: #10B981 !important; /* Green-500 */
+            background-color: #ECFDF5 !important; /* Green-50 */
+        }
+        .input-incorrect {
+            border-color: #EF4444 !important; /* Red-500 */
+            background-color: #FEF2F2 !important; /* Red-50 */
+        }
+        /* Ensure input fields don't wrap text onto the next line awkwardly */
+        .input-container {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping for small screens */
+            align-items: center;
+            gap: 0.5rem; /* Space between elements */
+        }
+        .input-container input {
+            flex-grow: 1; /* Allow input to grow */
+            min-width: 150px; /* Minimum width for input */
+        }
+        /* Highlight styles */
+        .highlight-yellow { background-color: #FEF9C3; } /* Yellow-100 */
+        .highlight-blue { background-color: #DBEAFE; } /* Blue-100 */
+        .highlight-green { background-color: #D1FAE5; } /* Green-100 */
+        .highlight-pink { background-color: #FCE7F3; } /* Pink-100 */
+        .highlighted-text {
+            /* Ensures highlighted text is treated as a single unit for selection */
+            display: inline;
+        }
+
+        /* Adjust for very small screens if necessary */
+        @media (max-width: 640px) {
+            .input-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .input-container input {
+                width: 100%; /* Full width on small screens */
+            }
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+    <div class="bg-white p-6 sm:p-8 md:p-10 rounded-xl shadow-2xl w-full max-w-4xl border border-gray-200">
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-6 text-center">
+            Dictation Exercise: Microplastics
+        </h1>
+        <p class="text-lg text-gray-600 mb-8 text-center">
+            Listen to the lecture (or read the context) and fill in the missing words or phrases.
+            You can also highlight text by selecting it.
+        </p>
+
+        <div id="dictationContent" class="space-y-6 text-gray-700 text-base sm:text-lg leading-relaxed select-text">
+
+            <div class="input-container">
+                <span>In today’s lecture, I’m going to be talking 1.</span>
+                <input type="text" id="blank1" data-correct-answer="about microplastics"
+                       class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-200">
+                <span>.</span>
+            </div>
+
+            <div class="input-container">
+                <span>Microplastics are tiny pieces of plastic 2.</span>
+                <input type="text" id="blank2" data-correct-answer="smaller than five millimetres in size"
+                       class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-200">
+                <span>. Recently there’s been a greater awareness that there are large quantities of plastic waste - big and small - in the environment. The amount of plastic waste in the oceans has received widespread attention, but far less is known about 3.</span>
+                <input type="text" id="blank3" data-correct-answer="the effects of microplastics in freshwater and particularly in soil"
+                       class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-200">
+                <span>.</span>
+            </div>
+
+            <div class="input-container">
+                <span>Microplastics can enter the environment 4.</span>
+                <input type="text" id="blank4" data-correct-answer="via a number of different sources"
+                       class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-200">
+                <span>. Threads and microfibres detach from synthetic clothing every time they’re put in a washing machine, and these 5.</span>
+                <input type="text" id="blank5" data-correct-answer="find their way into the water system"
+                       class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-200">
+                <span>. Other sources include big pieces of plastic waste that are already in the environment, and these break down 6.</span>
+                <input type="text" id="blank6" data-correct-answer="into microscopic particles over a period of time"
+                       class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-200">
+                <span>. On a larger scale, factory waste is another route, as are tyres 7.</span>
+                <input type="text" id="blank7" data-correct-answer="which wear down as cars, lorries and so on travel along road surfaces"
+                       class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-200">
+                <span>.</span>
+            </div>
+
+            <div class="input-container">
+                <span>We already understand some of the impacts of microplastics 8.</span>
+                <input type="text" id="blank8" data-correct-answer="from studies involving fish and other animals"
+                       class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-200">
+                <span>. There is evidence that microplastics harm small creatures in a variety of ways, such as by damaging their mouths, or by 9.</span>
+                <input type="text" id="blank9" data-correct-answer="impairing their ability to feed"
+                       class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-200">
+                <span>, for example when microplastics get lodged in their digestive system.</span>
+            </div>
+
+            <div class="input-container">
+                <span>Surprisingly perhaps, it is likely that humans 10.</span>
+                <input type="text" id="blank10" data-correct-answer="consume microplastics"
+                       class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-200">
+                <span>, as these have been detected in a wide range of food and drink products, including bottled water, as well as 11.</span>
+                <input type="text" id="blank11" data-correct-answer="in water that comes direct from the tap"
+                       class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-200">
+                <span>. What’s more, salt and many kinds of seafood have also been found to contain microplastics.</span>
+            </div>
+
+            <div class="input-container">
+                <span>However, it’s important to underline that there is not yet 12.</span>
+                <input type="text" id="blank12" data-correct-answer="conclusive proof that microplastics cause significant harm"
+                       class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-200">
+                <span>to people. In many countries, including here in the UK, there is legislation which prevents manufacturers from 13.</span>
+                <input type="text" id="blank13" data-correct-answer="adding plastic microbeads"
+                       class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-200">
+                <span>to shower gels, facial cleansers and toothpaste.</span>
+            </div>
+
+            <div class="input-container">
+                <span>It is very difficult to accurately estimate the total amount of microplastic particles in the soil as they 14.</span>
+                <input type="text" id="blank14" data-correct-answer="can be hard to detect"
+                       class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-200">
+                <span>, but we do know they are carried in the air and deposited in the soil by rain. What’s more, many of the fertilisers used by both 15.</span>
+                <input type="text" id="blank15" data-correct-answer="farmers and gardeners"
+                       class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-200">
+                <span>contain microplastics.</span>
+            </div>
+
+            <div class="input-container">
+                <span>A team from the Anglia Ruskin University in Cambridge has carried out a study of the effects of microplastics on 16.</span>
+                <input type="text" id="blank16" data-correct-answer="the digestive tracts of earthworms"
+                       class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-200">
+                <span>. These worms, which live in topsoil, are an essential component of our agricultural system. By feeding on soil, they mix nutrients into it, thereby making it more fertile.</span>
+            </div>
+
+            <div class="input-container">
+                <span>The researchers set out to discover whether the introduction of microplastics into the soil - and the subsequent ingestion of these by earthworms - would 17.</span>
+                <input type="text" id="blank17" data-correct-answer="impact soil quality and ultimately inhibit plant growth"
+                       class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-200">
+                <span>. The short answer was, yes, it did. After placing three different types of microplastic particles into the soil, they planted 18.</span>
+                <input type="text" id="blank18" data-correct-answer="perennial rye grass"
+                       class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-200">
+                <span>. The particles of microplastic, which included biodegradable PLA and conventional high-density polyethylene, or HDPE, were then ingested by the earthworms in the soil. The result was that the worms 19.</span>
+                <input type="text" id="blank19" data-correct-answer="lost weight rapidly"
+                       class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-200">
+                <span>. What’s more, a lower percentage than normal of the rye grass seeds germinated, and the researchers concluded that this was a direct result of the earthworms being unable to fulfil their normal role in making soil more fertile.</span>
+            </div>
+
+            <div class="input-container">
+                <span>To summarise, the authors proposed the idea that we need to regard soil as we would regard any other process in nature. This means we should accept the implications of soil being dependent on decaying and dead matter constantly being passed through the bodies of earthworms. That is, when soil becomes impoverished by the presence of microplastics, not only ecosystems but also 20.</span>
+                <input type="text" id="blank20" data-correct-answer="the whole of society are negatively impacted"
+                       class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-200">
+                <span>.</span>
+            </div>
+
+        </div>
+
+        <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+            <button id="checkAnswersBtn"
+                    class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                Check Answers
+            </button>
+            <button id="showAnswerKeyBtn"
+                    class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-3 px-6 rounded-lg shadow-md transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50">
+                Show Answer Key
+            </button>
+            <button id="saveResultsBtn"
+                    class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+                Save & Upload Results (PDF)
+            </button>
+        </div>
+
+        <div id="feedback" class="mt-6 text-center text-lg font-semibold"></div>
+
+        <div id="answerKeySection" class="mt-8 p-4 bg-gray-100 rounded-lg shadow-inner hidden">
+            <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Answer Key</h3>
+            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                <li>1. <strong>about microplastics</strong></li>
+                <li>2. <strong>smaller than five millimetres in size</strong></li>
+                <li>3. <strong>the effects of microplastics in freshwater and particularly in soil</strong></li>
+                <li>4. <strong>via a number of different sources</strong></li>
+                <li>5. <strong>find their way into the water system</strong></li>
+                <li>6. <strong>into microscopic particles over a period of time</strong></li>
+                <li>7. <strong>which wear down as cars, lorries and so on travel along road surfaces</strong></li>
+                <li>8. <strong>from studies involving fish and other animals</strong></li>
+                <li>9. <strong>impairing their ability to feed</strong></li>
+                <li>10. <strong>consume microplastics</strong></li>
+                <li>11. <strong>in water that comes direct from the tap</strong></li>
+                <li>12. <strong>conclusive proof that microplastics cause significant harm</strong></li>
+                <li>13. <strong>adding plastic microbeads</strong></li>
+                <li>14. <strong>can be hard to detect</strong></li>
+                <li>15. <strong>farmers and gardeners</strong></li>
+                <li>16. <strong>the digestive tracts of earthworms</strong></li>
+                <li>17. <strong>impact soil quality and ultimately inhibit plant growth</strong></li>
+                <li>18. <strong>perennial rye grass</strong></li>
+                <li>19. <strong>lost weight rapidly</strong></li>
+                <li>20. <strong>the whole of society are negatively impacted</strong></li>
+            </ul>
+        </div>
+
+        <div id="resultsTableSection" class="mt-8 p-4 bg-blue-50 rounded-lg shadow-inner hidden">
+            <h3 class="text-xl font-bold text-blue-800 mb-4 text-center">Your Submitted Results</h3>
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white rounded-lg shadow-md">
+                    <thead>
+                        <tr class="bg-blue-100 text-blue-700 uppercase text-sm leading-normal">
+                            <th class="py-3 px-6 text-left">Blank #</th>
+                            <th class="py-3 px-6 text-left">Your Answer</th>
+                            <th class="py-3 px-6 text-left">Correct Answer</th>
+                            <th class="py-3 px-6 text-center">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultsTableBody" class="text-gray-700 text-sm font-light">
+                        </tbody>
+                </table>
+            </div>
+            <h4 class="text-lg font-semibold text-blue-800 mt-6 mb-2">Your Highlights:</h4>
+            <ul id="highlightResultsList" class="list-disc list-inside space-y-1 text-gray-700">
+                </ul>
+            <p id="noHighlightsMessage" class="text-gray-500 italic hidden">No highlights were made.</p>
+        </div>
+    </div>
+
+    <div id="floatingToolbar" class="absolute hidden bg-gray-800 p-2 rounded-lg shadow-xl flex items-center space-x-2 z-50">
+        <button id="toolbarClearBtn" title="Clear Highlight" class="p-1 rounded-full bg-gray-600 hover:bg-gray-700 text-white text-lg leading-none flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm6 0a1 1 0 11-2 0v6a1 1 0 112 0V8z" clip-rule="evenodd" />
+            </svg>
+        </button>
+        <div id="toolbarYellow" title="Highlight Yellow" class="w-6 h-6 rounded-full cursor-pointer bg-yellow-400 hover:bg-yellow-500 transition-colors duration-200" data-color="highlight-yellow"></div>
+        <div id="toolbarBlue" title="Highlight Blue" class="w-6 h-6 rounded-full cursor-pointer bg-blue-400 hover:bg-blue-500 transition-colors duration-200" data-color="highlight-blue"></div>
+        <div id="toolbarGreen" title="Highlight Green" class="w-6 h-6 rounded-full cursor-pointer bg-green-400 hover:bg-green-500 transition-colors duration-200" data-color="highlight-green"></div>
+        <div id="toolbarPink" title="Highlight Pink" class="w-6 h-6 rounded-full cursor-pointer bg-pink-400 hover:bg-pink-500 transition-colors duration-200" data-color="highlight-pink"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const inputs = document.querySelectorAll('input[type="text"]');
+            const checkAnswersBtn = document.getElementById('checkAnswersBtn');
+            const showAnswerKeyBtn = document.getElementById('showAnswerKeyBtn');
+            const saveResultsBtn = document.getElementById('saveResultsBtn');
+            const feedbackDiv = document.getElementById('feedback');
+            const answerKeySection = document.getElementById('answerKeySection');
+            const resultsTableSection = document.getElementById('resultsTableSection');
+            const resultsTableBody = document.getElementById('resultsTableBody');
+            const highlightResultsList = document.getElementById('highlightResultsList');
+            const noHighlightsMessage = document.getElementById('noHighlightsMessage');
+            const dictationContent = document.getElementById('dictationContent');
+
+            // Floating toolbar elements
+            const floatingToolbar = document.getElementById('floatingToolbar');
+            const toolbarClearBtn = document.getElementById('toolbarClearBtn');
+            const toolbarYellow = document.getElementById('toolbarYellow');
+            const toolbarBlue = document.getElementById('toolbarBlue');
+            const toolbarGreen = document.getElementById('toolbarGreen');
+            const toolbarPink = document.getElementById('toolbarPink');
+
+            let currentHighlights = []; // Stores highlight data: { text: "...", color: "..." }
+            let lastSelectionRange = null; // Stores the last text selection range
+
+            // --- Highlighting Logic ---
+            function applyHighlight(colorClass) {
+                const selection = window.getSelection();
+                let range;
+
+                // Prioritize active selection, then fallback to last stored range
+                if (selection.rangeCount > 0 && !selection.isCollapsed) {
+                    range = selection.getRangeAt(0);
+                } else if (lastSelectionRange) {
+                    range = lastSelectionRange;
+                    selection.removeAllRanges(); // Clear current selection if any
+                    selection.addRange(range); // Re-add the stored range to make it active for manipulation
+                } else {
+                    feedbackDiv.textContent = "No text selected or previously selected to highlight.";
+                    feedbackDiv.classList.add('text-red-600');
+                    return;
+                }
+
+                const selectedText = range.toString().trim();
+                if (!selectedText) return;
+
+                // Create a span element to wrap the selected text
+                const span = document.createElement('span');
+                span.classList.add(colorClass);
+                span.classList.add('highlighted-text'); // Common class for all highlights
+
+                try {
+                    // Extract the selected content and wrap it
+                    const contents = range.extractContents();
+                    span.appendChild(contents);
+                    range.insertNode(span);
+
+                    // Add to currentHighlights array, avoiding duplicates for the exact same text and color
+                    const existingHighlight = currentHighlights.find(
+                        h => h.text === selectedText && h.color === colorClass.replace('highlight-', '')
+                    );
+                    if (!existingHighlight) {
+                        currentHighlights.push({
+                            text: selectedText,
+                            color: colorClass.replace('highlight-', '')
+                        });
+                    }
+
+                    // Clear the selection after highlighting
+                    selection.removeAllRanges();
+                    floatingToolbar.classList.add('hidden'); // Hide toolbar after action
+                    lastSelectionRange = null; // Clear last selection
+                } catch (e) {
+                    console.error("Error applying highlight:", e);
+                    feedbackDiv.textContent = "Could not highlight complex selection. Try selecting less text.";
+                    feedbackDiv.classList.add('text-red-600');
+                }
+            }
+
+            function clearSelectedHighlight() {
+                const selection = window.getSelection();
+                let range;
+
+                // Prioritize active selection, then fallback to last stored range
+                if (selection.rangeCount > 0 && !selection.isCollapsed) {
+                    range = selection.getRangeAt(0);
+                } else if (lastSelectionRange) {
+                    range = lastSelectionRange;
+                    selection.removeAllRanges(); // Clear current selection if any
+                    selection.addRange(range); // Re-add the stored range to make it active for manipulation
+                } else {
+                    feedbackDiv.textContent = "No text selected or previously selected to clear highlight.";
+                    feedbackDiv.classList.add('text-red-600');
+                    return;
+                }
+
+                const selectedNode = range.commonAncestorContainer;
+                let highlightedSpan = null;
+
+                // Check if the common ancestor itself is a highlighted span
+                if (selectedNode && selectedNode.nodeType === Node.ELEMENT_NODE && selectedNode.classList.contains('highlighted-text')) {
+                    highlightedSpan = selectedNode;
+                } else {
+                    // Traverse up the DOM tree to find a parent highlighted span
+                    let currentNode = selectedNode;
+                    // Ensure currentNode is not null and doesn't go above the dictationContent boundary
+                    while (currentNode && currentNode !== dictationContent && currentNode.parentNode) {
+                        if (currentNode.nodeType === Node.ELEMENT_NODE && currentNode.classList.contains('highlighted-text')) {
+                            highlightedSpan = currentNode;
+                            break;
+                        }
+                        currentNode = currentNode.parentNode;
+                    }
+                }
+
+                if (highlightedSpan && highlightedSpan.parentNode) { // Ensure parent exists before replacing
+                    // Replace the span with its contents
+                    const textContent = highlightedSpan.textContent;
+                    highlightedSpan.parentNode.replaceChild(document.createTextNode(textContent), highlightedSpan);
+
+                    // Remove from currentHighlights array (case-insensitive comparison for text)
+                    currentHighlights = currentHighlights.filter(h => h.text.toLowerCase() !== textContent.toLowerCase());
+
+                    selection.removeAllRanges();
+                    floatingToolbar.classList.add('hidden'); // Hide toolbar after action
+                    lastSelectionRange = null; // Clear last selection
+                    feedbackDiv.textContent = "Highlight cleared.";
+                    feedbackDiv.classList.remove('text-green-600', 'text-red-600', 'text-blue-600');
+                } else {
+                    feedbackDiv.textContent = "No highlight found to clear for this selection.";
+                    feedbackDiv.classList.add('text-red-600');
+                }
+            }
+
+            // --- Event Listeners for Toolbar ---
+            toolbarYellow.addEventListener('click', () => applyHighlight('highlight-yellow'));
+            toolbarBlue.addEventListener('click', () => applyHighlight('highlight-blue'));
+            toolbarGreen.addEventListener('click', () => applyHighlight('highlight-green'));
+            toolbarPink.addEventListener('click', () => applyHighlight('highlight-pink'));
+            toolbarClearBtn.addEventListener('click', clearSelectedHighlight);
+
+            // Show toolbar on text selection (mouseup event)
+            dictationContent.addEventListener('mouseup', (event) => {
+                const selection = window.getSelection();
+                if (selection.rangeCount > 0 && !selection.isCollapsed) {
+                    lastSelectionRange = selection.getRangeAt(0); // Store the current range
+                    const rect = lastSelectionRange.getBoundingClientRect();
+                    const toolbarHeight = floatingToolbar.offsetHeight;
+                    const toolbarWidth = floatingToolbar.offsetWidth;
+
+                    // Position above the selection
+                    floatingToolbar.style.top = `${rect.top + window.scrollY - toolbarHeight - 10}px`;
+                    // Center horizontally relative to selection, clamped to window
+                    let leftPos = rect.left + window.scrollX + (rect.width / 2) - (toolbarWidth / 2);
+                    leftPos = Math.max(10, leftPos); // Prevent going off left edge, add some padding
+                    leftPos = Math.min(leftPos, window.innerWidth - toolbarWidth - 10); // Prevent going off right edge
+                    floatingToolbar.style.left = `${leftPos}px`;
+
+                    floatingToolbar.classList.remove('hidden');
+                } else {
+                    floatingToolbar.classList.add('hidden');
+                    lastSelectionRange = null; // Clear if no selection
+                }
+            });
+
+            // Hide toolbar if clicking outside
+            document.addEventListener('mousedown', (event) => {
+                // Check if the click target is outside the toolbar AND outside the dictation content
+                if (!floatingToolbar.contains(event.target) && !dictationContent.contains(event.target)) {
+                    floatingToolbar.classList.add('hidden');
+                    lastSelectionRange = null; // Clear selection context
+                }
+            });
+
+
+            // --- Worksheet Functionality ---
+            // Function to check answers
+            function checkAnswers() {
+                let correctCount = 0;
+                const results = [];
+                inputs.forEach((input, index) => {
+                    const userAnswer = input.value.trim();
+                    const correctAnswer = input.dataset.correctAnswer.trim();
+
+                    // Remove existing feedback classes
+                    input.classList.remove('input-correct', 'input-incorrect');
+
+                    let isCorrect = false;
+                    if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+                        input.classList.add('input-correct');
+                        correctCount++;
+                        isCorrect = true;
+                    } else {
+                        input.classList.add('input-incorrect');
+                    }
+                    results.push({
+                        blankNumber: index + 1,
+                        userAnswer: userAnswer,
+                        correctAnswer: correctAnswer,
+                        isCorrect: isCorrect
+                    });
+                });
+
+                feedbackDiv.textContent = `You got ${correctCount} out of ${inputs.length} correct!`;
+                feedbackDiv.classList.remove('text-green-600', 'text-red-600', 'text-blue-600');
+                if (correctCount === inputs.length) {
+                    feedbackDiv.classList.add('text-green-600');
+                } else if (correctCount > 0) {
+                    feedbackDiv.classList.add('text-blue-600');
+                } else {
+                    feedbackDiv.classList.add('text-red-600');
+                }
+                return results;
+            }
+
+            checkAnswersBtn.addEventListener('click', () => {
+                checkAnswers();
+                resultsTableSection.classList.add('hidden'); // Hide results table on simple check
+            });
+
+            // Function to toggle answer key visibility
+            showAnswerKeyBtn.addEventListener('click', () => {
+                answerKeySection.classList.toggle('hidden');
+                if (answerKeySection.classList.contains('hidden')) {
+                    showAnswerKeyBtn.textContent = 'Show Answer Key';
+                } else {
+                    showAnswerKeyBtn.textContent = 'Hide Answer Key';
+                }
+            });
+
+            // Save and Upload Results button (now generates PDF and sends to server)
+            saveResultsBtn.addEventListener('click', async () => { // Added 'async'
+                const answers = checkAnswers(); // Check answers and get results
+                displayResultsTable(answers, currentHighlights); // Display results on page
+
+                feedbackDiv.textContent = "Generating PDF...";
+                feedbackDiv.classList.add('text-blue-600');
+
+                try {
+                    const pdfBlob = generatePdfReport(answers, currentHighlights); // Get the PDF Blob
+                    const filename = `microplastics_worksheet_results_${new Date().toISOString().slice(0,10)}.pdf`;
+
+                    // 1. Offer download to user (optional, but good practice)
+                    const url = URL.createObjectURL(pdfBlob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = filename;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url); // Clean up the URL object
+
+                    // 2. Upload to server
+                    const formData = new FormData();
+                    formData.append('pdfFile', pdfBlob, filename); // 'pdfFile' is the field name your server will look for
+
+                    feedbackDiv.textContent = "Uploading PDF...";
+                    feedbackDiv.classList.remove('text-blue-600');
+                    feedbackDiv.classList.add('text-yellow-600'); // Indicate uploading state
+
+                    // !!! IMPORTANT: Replace '/upload-pdf' with your actual backend server endpoint !!!
+                    const response = await fetch('/upload-pdf', {
+                        method: 'POST',
+                        body: formData,
+                        // 'Content-Type' header is usually set automatically for FormData
+                    });
+
+                    if (response.ok) {
+                        const result = await response.json();
+                        feedbackDiv.textContent = `Results PDF generated and uploaded! Access at: ${result.fileUrl}`;
+                        feedbackDiv.classList.remove('text-yellow-600');
+                        feedbackDiv.classList.add('text-green-600');
+                    } else {
+                        const errorText = await response.text();
+                        feedbackDiv.textContent = `PDF generation and download successful, but upload failed: ${errorText}`;
+                        feedbackDiv.classList.remove('text-yellow-600');
+                        feedbackDiv.classList.add('text-red-600');
+                        console.error('Upload failed:', response.status, errorText);
+                    }
+                } catch (error) {
+                    feedbackDiv.textContent = `An error occurred: ${error.message}`;
+                    feedbackDiv.classList.remove('text-yellow-600', 'text-blue-600');
+                    feedbackDiv.classList.add('text-red-600');
+                    console.error('Error in PDF generation or upload:', error);
+                }
+            });
+
+            // Function to generate PDF report (now returns Blob)
+            function generatePdfReport(answers, highlights) {
+                const { jsPDF } = window.jspdf;
+                const doc = new jsPDF();
+
+                doc.setFontSize(22);
+                doc.text("Dictation Exercise: Microplastics Results", 105, 20, null, null, "center");
+
+                doc.setFontSize(12);
+                doc.text(`Report generated on: ${new Date().toLocaleString()}`, 10, 30);
+
+                // Answers Table
+                doc.setFontSize(16);
+                doc.text("Your Answers", 10, 45);
+
+                const tableColumn = ["Blank #", "Your Answer", "Correct Answer", "Status"];
+                const tableRows = [];
+
+                answers.forEach(result => {
+                    const status = result.isCorrect ? "Correct" : "Incorrect";
+                    tableRows.push([
+                        result.blankNumber.toString(),
+                        result.userAnswer || "No answer",
+                        result.correctAnswer,
+                        status
+                    ]);
+                });
+
+                doc.autoTable({
+                    head: [tableColumn],
+                    body: tableRows,
+                    startY: 50,
+                    theme: 'striped',
+                    styles: {
+                        fontSize: 10,
+                        cellPadding: 2,
+                        fillColor: [255, 255, 255],
+                        textColor: [51, 51, 51],
+                        lineColor: [200, 200, 200],
+                        lineWidth: 0.1,
+                        overflow: 'linebreak', // Allow text to wrap within cells
+                    },
+                    headStyles: {
+                        fillColor: [220, 230, 240],
+                        textColor: [0, 0, 0],
+                        fontStyle: 'bold'
+                    },
+                    columnStyles: {
+                        0: { cellWidth: 20 }, // Blank #
+                        1: { cellWidth: 65 }, // Your Answer - Fixed width to ensure fit
+                        2: { cellWidth: 65 }, // Correct Answer - Fixed width to ensure fit
+                        3: { cellWidth: 30, halign: 'center' } // Status
+                    },
+                    didDrawCell: (data) => {
+                        if (data.section === 'body' && data.column.index === 3) {
+                            const status = data.cell.text[0];
+                            if (status === 'Correct') {
+                                doc.setFillColor(144, 238, 144); // Light green
+                            } else {
+                                doc.setFillColor(255, 182, 193); // Light red
+                            }
+                            doc.rect(data.cell.x + data.cell.padding('left'), data.cell.y + data.cell.padding('top'), data.cell.width - data.cell.padding('left') - data.cell.padding('right'), data.cell.height - data.cell.padding('top') - data.cell.padding('bottom'), 'F');
+                            doc.setTextColor(0, 0, 0); // Black text for status
+                            doc.text(status, data.cell.x + data.cell.width / 2, data.cell.y + data.cell.height / 2, { align: 'center', baseline: 'middle' });
+                        }
+                    }
+                });
+
+                // Highlights
+                let finalY = doc.lastAutoTable.finalY + 15;
+                doc.setFontSize(16);
+                doc.text("Your Highlights", 10, finalY);
+                finalY += 10;
+
+                if (highlights.length > 0) {
+                    doc.setFontSize(12);
+                    highlights.forEach((h) => {
+                        const textLines = doc.splitTextToSize(`- "${h.text}" (Color: ${h.color})`, doc.internal.pageSize.width - 25); // 25 for margin
+                        doc.text(textLines, 15, finalY);
+                        finalY += (textLines.length * 7); // Adjust Y for wrapped lines
+                    });
+                } else {
+                    doc.setFontSize(12);
+                    doc.setTextColor(150, 150, 150); // Gray text
+                    doc.text("No highlights were made.", 15, finalY);
+                }
+
+                return doc.output('blob'); // Return the Blob instead of saving
+            }
+
+
+            // Function to display results in the table (on-page display)
+            function displayResultsTable(answers, highlights) {
+                resultsTableBody.innerHTML = ''; // Clear previous results
+                highlightResultsList.innerHTML = ''; // Clear previous highlights list
+
+                answers.forEach(result => {
+                    const row = resultsTableBody.insertRow();
+                    row.classList.add('border-b', 'border-gray-200', 'hover:bg-gray-100');
+                    row.innerHTML = `
+                        <td class="py-3 px-6 text-left whitespace-nowrap">${result.blankNumber}</td>
+                        <td class="py-3 px-6 text-left">${result.userAnswer || '<span class="italic text-gray-400">No answer</span>'}</td>
+                        <td class="py-3 px-6 text-left"><strong>${result.correctAnswer}</strong></td>
+                        <td class="py-3 px-6 text-center">
+                            <span class="relative inline-block px-3 py-1 font-semibold leading-tight">
+                                <span aria-hidden="true" class="absolute inset-0 opacity-50 rounded-full ${result.isCorrect ? 'bg-green-200' : 'bg-red-200'}"></span>
+                                <span class="relative ${result.isCorrect ? 'text-green-900' : 'text-red-900'}">
+                                    ${result.isCorrect ? 'Correct' : 'Incorrect'}
+                                </span>
+                            </span>
+                        </td>
+                    `;
+                });
+
+                if (highlights.length > 0) {
+                    noHighlightsMessage.classList.add('hidden');
+                    highlights.forEach(h => {
+                        const listItem = document.createElement('li');
+                        listItem.innerHTML = `Highlighted "<span class="font-semibold">${h.text}</span>" in <span class="font-semibold text-${h.color}-600">${h.color}</span>.`;
+                        highlightResultsList.appendChild(listItem);
+                    });
+                } else {
+                    noHighlightsMessage.classList.remove('hidden');
+                }
+
+                resultsTableSection.classList.remove('hidden'); // Show the results table
+            }
+
+            // Optional: Clear feedback and input styling when user types again
+            inputs.forEach(input => {
+                input.addEventListener('input', () => {
+                    input.classList.remove('input-correct', 'input-incorrect');
+                    feedbackDiv.textContent = ''; // Clear feedback message
+                });
+            });
+
+            // No automatic loading of previous work since it's a download-focused version.
+        });
+    </script>
+</body>
+</html>
