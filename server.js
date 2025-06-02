@@ -4,7 +4,7 @@ const path = require('path');
 const fs = require('fs'); // Node.js built-in module for file system operations
 
 const app = express();
-const port = 3000; // You can change this port if 3000 is in use
+const port = process.env.PORT || 3000; // Use the port provided by the environment, or default to 3000
 
 // --- Multer Configuration for File Uploads ---
 // Sets up where the uploaded files will be stored and how they will be named.
